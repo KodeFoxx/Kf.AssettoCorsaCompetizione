@@ -18,6 +18,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{23CFDB15
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kf.AssettoCorsaCompetizione.Tests", "Tests\Kf.AssettoCorsaCompetizione.Tests\Kf.AssettoCorsaCompetizione.Tests.csproj", "{C0977851-5ED3-4B45-A60C-054BEE13AAF4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kf.AssettoCorsaCompetizione.Monitor", "Source\Kf.AssettoCorsaCompetizione.Monitor\Kf.AssettoCorsaCompetizione.Monitor.csproj", "{7AEABB5F-FC6C-4E0F-A5C0-8352994761CA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,6 +34,10 @@ Global
 		{C0977851-5ED3-4B45-A60C-054BEE13AAF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C0977851-5ED3-4B45-A60C-054BEE13AAF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C0977851-5ED3-4B45-A60C-054BEE13AAF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AEABB5F-FC6C-4E0F-A5C0-8352994761CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AEABB5F-FC6C-4E0F-A5C0-8352994761CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AEABB5F-FC6C-4E0F-A5C0-8352994761CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AEABB5F-FC6C-4E0F-A5C0-8352994761CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,6 +45,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{A7E27B49-FF20-4483-84B8-5573D4EB4275} = {EB768370-163E-40FE-ABE1-89B8353C3B39}
 		{C0977851-5ED3-4B45-A60C-054BEE13AAF4} = {23CFDB15-EACE-4621-ACD0-50B8A6008398}
+		{7AEABB5F-FC6C-4E0F-A5C0-8352994761CA} = {EB768370-163E-40FE-ABE1-89B8353C3B39}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A5AD2A8C-2D73-4737-91E1-3C38AF956B20}

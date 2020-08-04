@@ -18,7 +18,7 @@ namespace Kf.AssettoCorsaCompetizione.Tests.PageFiles
             result.ErrorInfo.InnerException.Should().BeOfType<DirectoryNotFoundException>();
         }
 
-        private class TestPageFile : PageFile
+        private class TestPageFile : PageFile<object>
         {
             public TestPageFile(string location) 
                 : base(location)

@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Kf.Essentials" Version="1.4.1" />
+    <PackageReference Include="Kf.Essentials.CleanArchitecture" Version="1.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Kf.AssettoCorsaCompetizione\Kf.AssettoCorsaCompetizione.csproj" />
+  </ItemGroup>
+
+</Project>
