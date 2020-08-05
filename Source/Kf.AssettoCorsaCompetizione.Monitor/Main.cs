@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -10,11 +12,15 @@ namespace Kf.AssettoCorsaCompetizione.Monitor
     public partial class Main : Form
     {
         private Queue<string> _log;
+
         private int _logHistoryCount = 50;
 
         public Main()
         {
             InitializeComponent();
+
+            LoadFlagPictures();
+
             InitializeGraphics();
             InitializeUpdateTimer();
         }
@@ -22,7 +28,7 @@ namespace Kf.AssettoCorsaCompetizione.Monitor
         private Timer _updateTimer;
         private void InitializeUpdateTimer()
         {
-            _updateTimer = new Timer { Interval = 2500, Enabled = true };
+            _updateTimer = new Timer { Interval = 100, Enabled = true };
             _updateTimer.Tick += (s, e) =>
             {
                 ReadGraphics();
@@ -72,6 +78,34 @@ namespace Kf.AssettoCorsaCompetizione.Monitor
                 Log($"          Flag: '{_graphicsInfo.Flag}'.");
                 Log($"==// END GRAPHICS INFO PACKET #{_graphicsInfo.PacketId} //==", noDate: true);
             }
+
+            UpdateFlagPicture(_graphicsInfo?.Flag ?? FlagTypes.None);
+        }
+
+        private Dictionary<FlagTypes, Image> _flags;
+        private void UpdateFlagPicture(FlagTypes flag)
+        {
+            uxCurrentFlag.Image = _flags[flag];
+            uxFlagTypeLabel.Text = flag.ToString().ToUpper();
+        }
+        private void LoadFlagPictures()
+        {
+            string flagPictureDirectory = Path.Combine(Directory.GetCurrentDirectory(), "Images", "Flags");
+            var flagPictures = Enum.GetNames(typeof(FlagTypes))
+                .Select(flagName =>
+                    new
+                    {
+                        Type = flagName,
+                        Image = Image.FromFile(Path.Combine(flagPictureDirectory, $"{flagName.ToLower()}.png"))
+                    }
+                );
+
+            _flags = flagPictures.ToDictionary(
+                keySelector: kvp => (FlagTypes)Enum.Parse(typeof(FlagTypes), kvp.Type),
+                elementSelector: kvp => kvp.Image
+            );
+
+            UpdateFlagPicture(FlagTypes.None);
         }
     }
 }

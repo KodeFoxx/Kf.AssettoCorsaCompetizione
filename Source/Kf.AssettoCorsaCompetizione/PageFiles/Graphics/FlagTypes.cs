@@ -2,7 +2,7 @@
 {
     public enum FlagTypes
     {
-        No = 0,
+        None = 0,
         Blue = 1,
         Yellow = 2,
         Black = 3,
