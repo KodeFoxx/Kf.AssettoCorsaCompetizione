@@ -1,12 +1,8 @@
 ﻿using Kf.AssettoCorsaCompetizione.PageFiles.Graphics;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Kf.AssettoCorsaCompetizione.Monitor
@@ -27,10 +23,11 @@ namespace Kf.AssettoCorsaCompetizione.Monitor
         private void InitializeUpdateTimer()
         {
             _updateTimer = new Timer { Interval = 2500, Enabled = true };
-            _updateTimer.Tick += (s, e) => {
+            _updateTimer.Tick += (s, e) =>
+            {
                 ReadGraphics();
             };
-        }        
+        }
 
         private void Log(string message, bool noDate = false)
         {
@@ -39,7 +36,7 @@ namespace Kf.AssettoCorsaCompetizione.Monitor
 
             if (_log.Count >= _logHistoryCount)
                 _log.Dequeue();
-            
+
             var dateTime = noDate ? String.Empty : $"[{DateTime.Now.ToString("HH:mm:ss.fff")}] - ";
             _log.Enqueue($"{dateTime}{message}");
 
@@ -57,19 +54,22 @@ namespace Kf.AssettoCorsaCompetizione.Monitor
             {
                 Log($"Failed to connect to graphics shared memory: '{result.ErrorInfo.InnerException.Message}'.");
                 _graphicsInfo = null;
-            }           
+            }
         }
         private void ReadGraphics()
         {
             if (_graphicsInfo == null)
                 InitializeGraphics();
 
-            if(_graphicsInfo != null)
+            if (_graphicsInfo != null)
             {
                 _graphicsInfo.RefreshData();
                 Log($"==== GRAPHICS INFO PACKETID #:{_graphicsInfo.PacketId} ====", noDate: true);
-                Log($"Session: '{_graphicsInfo.Session}'.");
-                Log($"Game State: '{_graphicsInfo.GameState}'.");
+                Log($"       Session: '{_graphicsInfo.Session}'.");
+                Log($"    Game State: '{_graphicsInfo.GameState}'.");
+                Log($"      Position: '{_graphicsInfo.Position}/{_graphicsInfo.TotalCars}'.");
+                Log($" Tyre Compound: '{_graphicsInfo.TyreCompound}'.");
+                Log($"          Flag: '{_graphicsInfo.Flag}'.");
                 Log($"==// END GRAPHICS INFO PACKET #{_graphicsInfo.PacketId} //==", noDate: true);
             }
         }

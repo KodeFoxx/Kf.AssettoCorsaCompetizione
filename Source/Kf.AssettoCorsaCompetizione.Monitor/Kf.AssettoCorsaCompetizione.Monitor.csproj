@@ -15,4 +15,8 @@
     <ProjectReference Include="..\Kf.AssettoCorsaCompetizione\Kf.AssettoCorsaCompetizione.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Images\Flags\" />
+  </ItemGroup>
+
 </Project>

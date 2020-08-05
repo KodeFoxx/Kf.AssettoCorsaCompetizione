@@ -1,7 +1,4 @@
-﻿using System;
-using System.Runtime.InteropServices;
-
-namespace Kf.AssettoCorsaCompetizione.PageFiles.Graphics
+﻿namespace Kf.AssettoCorsaCompetizione.PageFiles.Graphics
 {
     public sealed class GraphicsInfoPageFile : PageFile<GraphicsData>
     {
@@ -12,5 +9,9 @@ namespace Kf.AssettoCorsaCompetizione.PageFiles.Graphics
         public int PacketId => Data.PacketId;
         public GameStates GameState => Data.GameState;
         public SessionTypes Session => Data.Session;
+        public FlagTypes Flag => Data.Flag;
+        public int Position => Data.Position;
+        public int TotalCars => Data.ActiveCars;
+        public string TyreCompound => Data.TyreCompound;
     }
 }
