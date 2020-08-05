@@ -11,7 +11,10 @@
         public SessionTypes Session => Data.Session;
         public FlagTypes Flag => Data.Flag;
         public int Position => Data.Position;
-        public int Sector => Data.CurrentSector;
+        public int Sector
+            => GameState != GameStates.Off && GameState != GameStates.Replay
+                ? Data.CurrentSector + 1
+                : 0;
         public int TotalCars => Data.ActiveCars;
         public string TyreCompound => Data.TyreCompound;
     }
