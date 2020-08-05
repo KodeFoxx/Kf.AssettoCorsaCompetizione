@@ -12,9 +12,9 @@
         public FlagTypes Flag => Data.Flag;
         public int Position => Data.Position;
         public int Sector
-            => GameState != GameStates.Off && GameState != GameStates.Replay
-                ? Data.CurrentSector + 1
-                : 0;
+            => GameState == GameStates.Off || GameState == GameStates.Replay
+                ? 0
+                : Data.CurrentSector + 1;
         public int TotalCars => Data.ActiveCars;
         public string TyreCompound => Data.TyreCompound;
     }
