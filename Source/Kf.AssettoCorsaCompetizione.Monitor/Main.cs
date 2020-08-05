@@ -80,7 +80,11 @@ namespace Kf.AssettoCorsaCompetizione.Monitor
             }
 
             UpdateFlagPicture(_graphicsInfo?.Flag ?? FlagTypes.None);
+            UpdateSector(_graphicsInfo?.Sector ?? 0);
         }
+
+        private void UpdateSector(int sectorNumber)
+            => uxCurrentSector.Text = sectorNumber.ToString();
 
         private Dictionary<FlagTypes, Image> _flags;
         private void UpdateFlagPicture(FlagTypes flag)

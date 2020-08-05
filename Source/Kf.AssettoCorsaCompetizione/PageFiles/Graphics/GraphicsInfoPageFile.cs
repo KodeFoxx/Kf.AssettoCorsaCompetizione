@@ -11,6 +11,7 @@
         public SessionTypes Session => Data.Session;
         public FlagTypes Flag => Data.Flag;
         public int Position => Data.Position;
+        public int Sector => Data.CurrentSector;
         public int TotalCars => Data.ActiveCars;
         public string TyreCompound => Data.TyreCompound;
     }

@@ -33,6 +33,8 @@
             this.uxCurrentFlag = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.uxFlagTypeLabel = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.uxCurrentSector = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.uxCurrentFlag)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,6 +89,30 @@
             this.uxFlagTypeLabel.Text = "FLAG TYPE";
             this.uxFlagTypeLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(5, 11);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(117, 30);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "| SECTOR";
+            // 
+            // uxCurrentSector
+            // 
+            this.uxCurrentSector.BackColor = System.Drawing.Color.Black;
+            this.uxCurrentSector.Font = new System.Drawing.Font("Segoe UI", 60F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.uxCurrentSector.ForeColor = System.Drawing.Color.White;
+            this.uxCurrentSector.Location = new System.Drawing.Point(12, 39);
+            this.uxCurrentSector.Margin = new System.Windows.Forms.Padding(0);
+            this.uxCurrentSector.Name = "uxCurrentSector";
+            this.uxCurrentSector.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.uxCurrentSector.Size = new System.Drawing.Size(110, 110);
+            this.uxCurrentSector.TabIndex = 1;
+            this.uxCurrentSector.Text = "0";
+            this.uxCurrentSector.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -97,6 +123,8 @@
             this.Controls.Add(this.uxCurrentFlag);
             this.Controls.Add(this.uxLogLabel);
             this.Controls.Add(this.uxLog);
+            this.Controls.Add(this.uxCurrentSector);
+            this.Controls.Add(this.label2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Main";
@@ -116,6 +144,8 @@
         private System.Windows.Forms.PictureBox uxCurrentFlag;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label uxFlagTypeLabel;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label uxCurrentSector;
     }
 }
 
