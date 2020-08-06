@@ -83,6 +83,27 @@ namespace Kf.AssettoCorsaCompetizione.Monitor
             UpdateFlagPicture(_graphicsInfo?.Flag ?? FlagTypes.None);
             UpdateSector(_graphicsInfo?.Sector ?? 0);
             UpdateValidLap(_graphicsInfo?.IsValidLap);
+            UpdateLapTimes(_graphicsInfo);
+        }
+
+        private void UpdateLapTimes(GraphicsInfoPageFile graphicsInfo)
+        {
+            UpdateLapTimeTextBox(graphicsInfo?.BestLapTime, uxBestLap);
+            UpdateLapTimeTextBox(graphicsInfo?.EstimatedLapTime, uxEstimatedLap);
+            UpdateLapTimeTextBox(graphicsInfo?.PreviousLapTime, uxPreviousLap);
+        }
+        private void UpdateLapTimeTextBox(string content, Label targetUxLabel)
+        {
+            if (String.IsNullOrWhiteSpace(content) || content == "-" || content.StartsWith("35791:23"))
+            {
+                targetUxLabel.ForeColor = Color.Gray;
+                targetUxLabel.Text = "-";
+            }
+            else
+            {
+                targetUxLabel.ForeColor = Color.White;
+                targetUxLabel.Text = content;
+            }
         }
 
         private void UpdateValidLap(bool? isValidLap)
