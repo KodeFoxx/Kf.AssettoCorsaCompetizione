@@ -35,9 +35,8 @@ namespace Kf.AssettoCorsaCompetizione.PageFiles.Graphics
         public float ReplayTimeMultiplier;
         public float NormalizedCarPosition;
         public int ActiveCars;
-        //[MarshalAs(UnmanagedType.ByValArray, SizeConst = 60 * 3)]
-        //public float[,] CarCoordinates;
-        public CarCoordinates CarCoordinates;
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 60)]
+        public CarCoordinates[] CarCoordinates;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 60)]
         public int[] CarIds;
         public int CarId;

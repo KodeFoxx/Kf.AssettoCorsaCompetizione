@@ -7,11 +7,8 @@ namespace Kf.AssettoCorsaCompetizione.PageFiles.Graphics
     [Serializable]
     public struct CarCoordinates
     {
-        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 60)]
-        public float[] One;
-        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 60)]
-        public float[] Two;
-        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 60)]
-        public float[] Three;
+        public float X;
+        public float Y;
+        public float Z;
     }
 }

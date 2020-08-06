@@ -19,6 +19,7 @@
                 ? 0
                 : Data.CurrentSector + 1;
         public int TotalCars => Data.ActiveCars;
+        public CarCoordinates[] CarCoordinates => Data.CarCoordinates;
         public string TyreCompound => Data.TyreCompound;
     }
 }
