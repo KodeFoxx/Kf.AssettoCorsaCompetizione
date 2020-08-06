@@ -1,4 +1,5 @@
 ﻿using Kf.AssettoCorsaCompetizione.PageFiles.Graphics;
+using Kf.AssettoCorsaCompetizione.PageFiles.Graphics.AccDataTypes;
 using System;
 using System.Collections.Generic;
 using System.Data;

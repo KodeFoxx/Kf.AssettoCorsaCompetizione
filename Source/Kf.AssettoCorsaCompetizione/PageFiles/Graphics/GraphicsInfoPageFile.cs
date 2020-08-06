@@ -1,4 +1,6 @@
-﻿namespace Kf.AssettoCorsaCompetizione.PageFiles.Graphics
+﻿using Kf.AssettoCorsaCompetizione.PageFiles.Graphics.AccDataTypes;
+
+namespace Kf.AssettoCorsaCompetizione.PageFiles.Graphics
 {
     public sealed class GraphicsInfoPageFile : PageFile<GraphicsData>
     {

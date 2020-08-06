@@ -1,4 +1,4 @@
-﻿using Kf.AssettoCorsaCompetizione.PageFiles.Graphics;
+﻿using Kf.AssettoCorsaCompetizione.PageFiles.Graphics.AccDataTypes;
 using System.IO;
 
 namespace Kf.AssettoCorsaCompetizione.Monitor.Model
