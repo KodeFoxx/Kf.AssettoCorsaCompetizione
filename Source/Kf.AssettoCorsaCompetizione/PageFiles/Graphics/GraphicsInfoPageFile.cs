@@ -9,7 +9,10 @@
         public int PacketId => Data.PacketId;
         public GameStates GameState => Data.GameState;
         public SessionTypes Session => Data.Session;
-        public FlagTypes Flag => Data.Flag;
+        public FlagTypes Flag
+            => GameState == GameStates.Off || GameState == GameStates.Replay
+                ? FlagTypes.None
+                : Data.Flag;
         public int Position => Data.Position;
         public int Sector
             => GameState == GameStates.Off || GameState == GameStates.Replay
