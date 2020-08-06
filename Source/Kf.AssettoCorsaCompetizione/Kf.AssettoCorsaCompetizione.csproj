@@ -9,4 +9,8 @@
     <PackageReference Include="Kf.Essentials.CleanArchitecture" Version="1.4.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="PageFiles\Graphics\WrapperDataTypes\" />
+  </ItemGroup>
+
 </Project>

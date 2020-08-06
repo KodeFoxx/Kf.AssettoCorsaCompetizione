@@ -1,4 +1,4 @@
-﻿namespace Kf.AssettoCorsaCompetizione.PageFiles.Graphics
+﻿namespace Kf.AssettoCorsaCompetizione.PageFiles.Graphics.AccDataTypes
 {
     public enum GameStates
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace Kf.AssettoCorsaCompetizione.PageFiles.Graphics
+namespace Kf.AssettoCorsaCompetizione.PageFiles.Graphics.AccDataTypes
 {
     [StructLayout(LayoutKind.Sequential, Pack = 4, CharSet = CharSet.Unicode)]
     [Serializable]
