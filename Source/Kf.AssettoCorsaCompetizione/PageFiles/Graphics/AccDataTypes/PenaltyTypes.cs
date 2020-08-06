@@ -9,7 +9,7 @@
         StopAndGo_30_Seconds_Cutting = 4,
         Disqualified_Cutting = 5,
         BestLapTimeRemoved_Cutting = 6,
-        DriveThrought_SpeedingInPitLane = 7,
+        DriveThrough_SpeedingInPitLane = 7,
         StopAndGo_10_Seconds_SpeedingInPitLane = 8,
         StopAndGo_20_Seconds_SpeedingInPitLane = 9,
         StopAndGo_30_Seconds_SpeedingInPitLane = 10,
