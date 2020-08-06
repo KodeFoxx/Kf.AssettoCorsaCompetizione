@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.uxLog = new System.Windows.Forms.TextBox();
             this.uxLogLabel = new System.Windows.Forms.Label();
             this.uxCurrentFlag = new System.Windows.Forms.PictureBox();
@@ -125,10 +126,10 @@
             this.Controls.Add(this.uxLog);
             this.Controls.Add(this.uxCurrentSector);
             this.Controls.Add(this.label2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Main";
-            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ACC Monitor";
             ((System.ComponentModel.ISupportInitialize)(this.uxCurrentFlag)).EndInit();
