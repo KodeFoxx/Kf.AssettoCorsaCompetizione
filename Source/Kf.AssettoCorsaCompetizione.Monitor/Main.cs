@@ -82,17 +82,76 @@ namespace Kf.AssettoCorsaCompetizione.Monitor
 
             UpdateFlagPicture(_graphicsInfo?.Flag ?? FlagTypes.None);
             UpdateSector(_graphicsInfo?.Sector ?? 0);
+            UpdateValidLap(_graphicsInfo?.IsValidLap);
+        }
+
+        private void UpdateValidLap(bool? isValidLap)
+        {
+            if (!isValidLap.HasValue)
+            {
+                uxIsValidLap.ForeColor = Color.Gray;
+                uxIsValidLap.Text = "-";
+            }
+            else
+            {
+                if (isValidLap.Value)
+                {
+                    uxIsValidLap.ForeColor = Color.LightGreen;
+                    uxIsValidLap.Text = "Y";
+                }
+                else
+                {
+                    uxIsValidLap.ForeColor = Color.Red;
+                    uxIsValidLap.Text = "N";
+                }
+            }
         }
 
         private void UpdateSector(int sectorNumber)
-            => uxCurrentSector.Text = sectorNumber.ToString();
+        {
+            if (sectorNumber == 0)
+            {
+                uxCurrentSector.ForeColor = Color.Gray;
+                uxCurrentSector.Text = "-";
+            }
+            else
+            {
+                uxCurrentSector.ForeColor = Color.White;
+                uxCurrentSector.Text = sectorNumber.ToString();
+            }
+        }
 
         private Dictionary<FlagTypes, Image> _flags;
         private void UpdateFlagPicture(FlagTypes flag)
         {
             uxCurrentFlag.Image = _flags[flag];
             uxFlagTypeLabel.Text = flag.ToString().ToUpper();
+
+            if (flag != FlagTypes.None && flag != (FlagTypes)uxFlagHistory1.Tag)
+            {
+                uxFlagHistory3.Tag = uxFlagHistory2.Tag;
+                uxFlagHistory3.Image = _flags[(FlagTypes)uxFlagHistory2.Tag];
+
+                uxFlagHistory2.Tag = uxFlagHistory1.Tag;
+                uxFlagHistory2.Image = _flags[(FlagTypes)uxFlagHistory1.Tag];
+
+                uxFlagHistory1.Tag = flag;
+                uxFlagHistory1.Image = _flags[flag];
+            }
         }
+
+        private void InitializeFlagHistory()
+        {
+            uxFlagHistory3.Tag = FlagTypes.None;
+            uxFlagHistory3.Image = _flags[(FlagTypes)uxFlagHistory3.Tag];
+
+            uxFlagHistory2.Tag = FlagTypes.None;
+            uxFlagHistory2.Image = _flags[(FlagTypes)uxFlagHistory2.Tag];
+
+            uxFlagHistory1.Tag = FlagTypes.None;
+            uxFlagHistory1.Image = _flags[(FlagTypes)uxFlagHistory1.Tag];
+        }
+
         private void LoadFlagPictures()
         {
             string flagPictureDirectory = Path.Combine(Directory.GetCurrentDirectory(), "Images", "Flags");
@@ -110,6 +169,7 @@ namespace Kf.AssettoCorsaCompetizione.Monitor
                 elementSelector: kvp => kvp.Image
             );
 
+            InitializeFlagHistory();
             UpdateFlagPicture(FlagTypes.None);
         }
     }

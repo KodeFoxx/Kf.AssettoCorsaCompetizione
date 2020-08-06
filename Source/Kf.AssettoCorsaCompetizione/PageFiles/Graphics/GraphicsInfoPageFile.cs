@@ -23,5 +23,10 @@ namespace Kf.AssettoCorsaCompetizione.PageFiles.Graphics
         public int TotalCars => Data.ActiveCars;
         public CarCoordinates[] CarCoordinates => Data.CarCoordinates;
         public string TyreCompound => Data.TyreCompound;
+        public string EstimatedLapTime => Data.EstimatedLapTime;
+        public bool? IsValidLap
+            => GameState == GameStates.Off || GameState == GameStates.Replay
+                ? (bool?)null
+                : Data.IsValidLap == 1;
     }
 }

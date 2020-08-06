@@ -14,7 +14,7 @@ namespace Kf.AssettoCorsaCompetizione.PageFiles.Graphics
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 15)]
         public string CurrentTime;
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 15)]
-        public string LasdtTime;
+        public string LastTime;
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 15)]
         public string BestTime;
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 15)]
